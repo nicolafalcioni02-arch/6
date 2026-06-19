@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per Sofia che è triste</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Uno sfondo dolce e rassicurante */
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #roseContainer {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .rose {
+            font-size: 100px;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .show {
+            display: block !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="greeting">Ehi Sofia...</h1>
+        
+        <button id="magicButton">Clicca qui principessa!</button>
+        
+        <div id="roseContainer">
+            <div class="rose">🌹</div>
+            <p class="message">Per te!</p>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('magicButton');
+        const roseContainer = document.getElementById('roseContainer');
+        const greeting = document.getElementById('greeting');
+
+        btn.addEventListener('click', () => {
+            // Nasconde il bottone e il saluto iniziale
+            btn.style.display = 'none';
+            greeting.style.display = 'none';
+            
+            // Mostra la rosa con un effetto di dissolvenza
+            roseContainer.classList.add('show');
+        });
+    </script>
+
+</body>
+</html>
